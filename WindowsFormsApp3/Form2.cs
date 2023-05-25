@@ -118,25 +118,34 @@ namespace WindowsFormsApp3
                 string blood = textBloodGroup.Text;
                 string any = textAny.Text;
                 int pid = Convert.ToInt32(textPid.Text);
-                SqlConnection con = new SqlConnection(ConnectionString);
-                con.Open();
-                if (con.State == ConnectionState.Open)
-                {
-                    string q = "insert into test2(name,address,contact,age,gender,blood,pid)values('" + textName.Text + "','" + textAddress.Text + "','" + textContactNumber.Text.ToString() + "','" + textAge.Text.ToString() + "','" + comboGender.Text + "','" + textBloodGroup.Text + "','" + textPid.Text.ToString() + "')";
-                    SqlCommand cmd = new SqlCommand(q, con);
-                    cmd.ExecuteNonQuery();
-                    //cmd.CommandText = "INSERT INTO Patients (Name, Full_Address, Contact, Age, Gender, Blood_Group, Major_Disease, pid) " +
-                    //"VALUES (@Name, @Full_Address, @Contact, @Age, @Gender, @Blood_Group, @Major_Disease, @pid)";
 
+                using (SqlConnection con = new SqlConnection(ConnectionString))
+                {
+                    con.Open();
+                    if (con.State == ConnectionState.Open)
+                    {
+                        string query = "INSERT INTO test2 (name, address, contact, age, gender, blood, pid) VALUES (@Name, @Address, @Contact, @Age, @Gender, @Blood, @Pid)";
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        cmd.Parameters.AddWithValue("@Name", name);
+                        cmd.Parameters.AddWithValue("@Address", address);
+                        cmd.Parameters.AddWithValue("@Contact", contact);
+                        cmd.Parameters.AddWithValue("@Age", age);
+                        cmd.Parameters.AddWithValue("@Gender", gender);
+                        cmd.Parameters.AddWithValue("@Blood", blood);
+                        cmd.Parameters.AddWithValue("@Pid", pid);
+
+                        cmd.ExecuteNonQuery();
+                    }
                 }
+
                 MessageBox.Show("Data saved successfully!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred while saving the data: " + ex.Message);
             }
-        }
 
-  
-    } 
+
+        }
+    }
 }

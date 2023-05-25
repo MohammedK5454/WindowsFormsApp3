@@ -14,6 +14,7 @@ namespace WindowsFormsApp3
 {
     public partial class Form2 : Form
     {
+        private const string ConnectionString = "Data Source=DESKTOP-IKTSBR8\\SQLEXPRESS;Initial Catalog=healthcare;Integrated Security=True";
         public Form2()
         {
             InitializeComponent();
@@ -105,7 +106,6 @@ namespace WindowsFormsApp3
         {
 
         }
-        public string conString = "Data Source=DESKTOP-IKTSBR8\\SQLEXPRESS;Initial Catalog=healthcare;Integrated Security=True";
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -118,7 +118,7 @@ namespace WindowsFormsApp3
                 string blood = textBloodGroup.Text;
                 string any = textAny.Text;
                 int pid = Convert.ToInt32(textPid.Text);
-                SqlConnection con = new SqlConnection(conString);
+                SqlConnection con = new SqlConnection(ConnectionString);
                 con.Open();
                 if (con.State == ConnectionState.Open)
                 {

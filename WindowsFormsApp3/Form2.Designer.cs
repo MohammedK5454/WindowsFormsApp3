@@ -69,7 +69,7 @@
             // 
             this.btnaddpt.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnaddpt.Location = new System.Drawing.Point(67, 53);
-            this.btnaddpt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnaddpt.Margin = new System.Windows.Forms.Padding(2);
             this.btnaddpt.Name = "btnaddpt";
             this.btnaddpt.Size = new System.Drawing.Size(188, 58);
             this.btnaddpt.TabIndex = 0;
@@ -81,7 +81,7 @@
             // 
             this.btnAddstaf.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAddstaf.Location = new System.Drawing.Point(67, 101);
-            this.btnAddstaf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddstaf.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddstaf.Name = "btnAddstaf";
             this.btnAddstaf.Size = new System.Drawing.Size(188, 58);
             this.btnAddstaf.TabIndex = 1;
@@ -93,7 +93,7 @@
             // 
             this.btnhistory.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnhistory.Location = new System.Drawing.Point(67, 155);
-            this.btnhistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnhistory.Margin = new System.Windows.Forms.Padding(2);
             this.btnhistory.Name = "btnhistory";
             this.btnhistory.Size = new System.Drawing.Size(188, 58);
             this.btnhistory.TabIndex = 2;
@@ -105,7 +105,7 @@
             // 
             this.btnhostinfo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnhostinfo.Location = new System.Drawing.Point(67, 211);
-            this.btnhostinfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnhostinfo.Margin = new System.Windows.Forms.Padding(2);
             this.btnhostinfo.Name = "btnhostinfo";
             this.btnhostinfo.Size = new System.Drawing.Size(188, 58);
             this.btnhostinfo.TabIndex = 3;
@@ -140,7 +140,7 @@
             // 
             this.btnexit.BackColor = System.Drawing.Color.LightCoral;
             this.btnexit.Location = new System.Drawing.Point(103, 272);
-            this.btnexit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnexit.Margin = new System.Windows.Forms.Padding(2);
             this.btnexit.Name = "btnexit";
             this.btnexit.Size = new System.Drawing.Size(66, 38);
             this.btnexit.TabIndex = 8;
@@ -152,19 +152,18 @@
             // 
             this.pictureBox2.Image = global::WindowsFormsApp3.Properties.Resources.lifeline_heartbeat1;
             this.pictureBox2.Location = new System.Drawing.Point(5, 314);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(283, 142);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
-          
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WindowsFormsApp3.Properties.Resources.pexels_jonathan_meyer_668300;
             this.pictureBox1.Location = new System.Drawing.Point(288, 22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(776, 434);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -235,7 +234,7 @@
             this.panel2.Controls.Add(this.textAge);
             this.panel2.Controls.Add(this.textBloodGroup);
             this.panel2.Controls.Add(this.textName);
-            this.panel2.Location = new System.Drawing.Point(288, 12);
+            this.panel2.Location = new System.Drawing.Point(269, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(620, 479);
             this.panel2.TabIndex = 15;
@@ -243,7 +242,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(629, 372);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(89, 32);
             this.btnSave.TabIndex = 22;
@@ -375,7 +374,7 @@
             // 
             this.textAny.Location = new System.Drawing.Point(47, 302);
             this.textAny.Name = "textAny";
-            this.textAny.Size = new System.Drawing.Size(621, 20);
+            this.textAny.Size = new System.Drawing.Size(534, 20);
             this.textAny.TabIndex = 17;
             // 
             // textAge
@@ -418,7 +417,7 @@
             this.Controls.Add(this.btnhistory);
             this.Controls.Add(this.btnAddstaf);
             this.Controls.Add(this.btnaddpt);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);

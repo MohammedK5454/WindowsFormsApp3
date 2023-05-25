@@ -105,7 +105,7 @@ namespace WindowsFormsApp3
         {
 
         }
-
+        public string conString = "Data Source=DESKTOP-IKTSBR8\\SQLEXPRESS;Initial Catalog=healthcare;Integrated Security=True";
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -118,28 +118,17 @@ namespace WindowsFormsApp3
                 string blood = textBloodGroup.Text;
                 string any = textAny.Text;
                 int pid = Convert.ToInt32(textPid.Text);
-
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = "data source=DESKTOP-IKTSBR8\\SQLEXPRESS;database=healthcare;integrated security=True";
-
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "INSERT INTO Patients (Name, Full_Address, Contact, Age, Gender, Blood_Group, Major_Disease, pid) " +
-                                  "VALUES (@Name, @Full_Address, @Contact, @Age, @Gender, @Blood_Group, @Major_Disease, @pid)";
-
-                cmd.Parameters.AddWithValue("@Name", name);
-                cmd.Parameters.AddWithValue("@Full_Address", address);
-                cmd.Parameters.AddWithValue("@Contact", contact);
-                cmd.Parameters.AddWithValue("@Age", age);
-                cmd.Parameters.AddWithValue("@Gender", gender);
-                cmd.Parameters.AddWithValue("@Blood_Group", blood);
-                cmd.Parameters.AddWithValue("@Major_Disease", any);
-                cmd.Parameters.AddWithValue("@pid", pid);
-
+                SqlConnection con = new SqlConnection(conString);
                 con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
+                if (con.State == ConnectionState.Open)
+                {
+                    string q = "insert into test2(name,address,contact,age,gender,blood,pid)values('" + textName.Text + "','" + textAddress.Text + "','" + textContactNumber.Text.ToString() + "','" + textAge.Text.ToString() + "','" + comboGender.Text + "','" + textBloodGroup.Text + "','" + textPid.Text.ToString() + "')";
+                    SqlCommand cmd = new SqlCommand(q, con);
+                    cmd.ExecuteNonQuery();
+                    //cmd.CommandText = "INSERT INTO Patients (Name, Full_Address, Contact, Age, Gender, Blood_Group, Major_Disease, pid) " +
+                    //"VALUES (@Name, @Full_Address, @Contact, @Age, @Gender, @Blood_Group, @Major_Disease, @pid)";
 
+                }
                 MessageBox.Show("Data saved successfully!");
             }
             catch (Exception ex)

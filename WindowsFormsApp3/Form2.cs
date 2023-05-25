@@ -124,6 +124,7 @@ namespace WindowsFormsApp3
                     con.Open();
                     if (con.State == ConnectionState.Open)
                     {
+                        //channge your table names
                         string query = "INSERT INTO test2 (name, address, contact, age, gender, blood, pid) VALUES (@Name, @Address, @Contact, @Age, @Gender, @Blood, @Pid)";
                         SqlCommand cmd = new SqlCommand(query, con);
                         cmd.Parameters.AddWithValue("@Name", name);
